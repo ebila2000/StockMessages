@@ -7,7 +7,7 @@ const proxy = require("./proxy")
 
 const abs_publicpath = path.join(__dirname, "../public")
 const views_path = path.join(__dirname, "../views")
-
+const port = process.env.PORT
 const webapp = express()
 
 //webapp.engine('hbs', handlebars.engine);
@@ -15,7 +15,8 @@ webapp.set('view engine', 'hbs') // to add the handlebars to the express to be u
 webapp.set('views', views_path) // pointing express to the custom directory
 
 webapp.use(express.static(abs_publicpath)) // setting up the static directory
-webapp.listen(3000, () => { console.log("Server Started") })
+webapp.listen(port || 3000, () => { console.log("Server Started") })
+
 
 
 

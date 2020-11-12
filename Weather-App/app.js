@@ -18,7 +18,7 @@ geocode.getgeocode("Toronto", (error, data) => {
                 console.log("Error in Weather API:" + error)
             }
             else {
-                console.log("Weather:" + out)
+                console.log("The Weather:" + out)
             }
         })
     }
